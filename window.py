@@ -1,4 +1,4 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import (QtCore, QtWidgets)
 from PyQt5.QtGui import QIcon
 
 
@@ -7,11 +7,22 @@ class Ui_Dialog(object):
         Dialog.setObjectName("Dialog")
         Dialog.resize(640, 470)
         Dialog.setStyleSheet("")
+        self.pushButton_choose = QtWidgets.QPushButton(Dialog)
+        self.pushButton_choose.setGeometry(QtCore.QRect(290, 75, 25, 25))
+        self.pushButton_choose.setStyleSheet("background-color: #F5E2E2;")
+        self.pushButton_choose.setObjectName("pushButton_choose")
+
+        self.label_choose = QtWidgets.QLabel(Dialog)
+        self.label_choose.setGeometry(QtCore.QRect(180, 80, 210, 16))
+        self.label_choose.setStyleSheet("font: 9pt \"OCR A Extended\";")
+        self.label_choose.setObjectName("label_choose")
+
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(260, 390, 93, 28))
         self.pushButton.setStyleSheet("font: 8pt \"Showcard Gothic\";\n"
                                       "")
         self.pushButton.setObjectName("pushButton")
+
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(210, 20, 221, 21))
         self.label.setStyleSheet("font: 12pt \"Snap ITC\";\n"
@@ -52,10 +63,11 @@ class Ui_Dialog(object):
         Dialog.setWindowIcon(QIcon("icon.png"))
         self.radioButton.setIcon(QIcon("Ok-icon.png"))
         self.radioButton_2.setIcon(QIcon("no-icon.png"))
+        self.pushButton_choose.setIcon(QIcon("upload-icon.png"))
         self.pushButton.setText(_translate("Dialog", "Count!"))
         self.label.setText(_translate("Dialog", "Character counter"))
         self.label_2.setText(_translate("Dialog", "Input text:"))
+        self.label_choose.setText(_translate("Dialog", "Upload(.txt)"))
         self.radioButton.setText(_translate("Dialog", "With spaces"))
         self.radioButton_2.setText(_translate("Dialog", "Without spaces"))
         self.label_3.setText(_translate("Dialog", "version 1.0"))
-        #self.label_4.setText(_translate("Dialog", "Result:"))
