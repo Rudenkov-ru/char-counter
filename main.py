@@ -30,17 +30,23 @@ def get_length():
         print("Error Message")
 
 
-def showDialog(self):
-    filename = QFileDialog.getOpenFileName()
+def showDialog():
+    filedialog = QFileDialog()
+    # filedialog.exec()
+    filename = filedialog.getOpenFileName(filedialog, "C:\\", "", "Text files (*.txt)")
+
     path = filename[0]
 
-    print(path)
+    print("file path: " + path)
+    if path == "":
+        print("file not selected")
+    else:
 
-    with open(path, "r") as f:
-        text = f.readline()
-        ui.textEdit.setText(str(text))
-        print("Text has been inserted")
-        Information.showMessage("Text has been inserted!")
+        with open(path, "r", encoding="utf-8") as f:
+            text = f.readlines()
+            ui.textEdit.setText(str(text))
+            print("Text has been inserted")
+            Information.showMessage("Text has been inserted!")
 
 
 ui.pushButton_choose.setToolTip('Use <b>Ctrl+O</b> for open file')

@@ -1,0 +1,1 @@
+file_dialog = QFileDialog(self) # the name filters must be a list file_dialog.setNameFilters(["Text files (.txt)", "Images (.png .jpg)"]) file_dialog.selectNameFilter("Images (.png *.jpg)") # show the dialog filedialog.exec()
